@@ -1,9 +1,11 @@
 {
 	"folders": [
 		{
+			"name": "JavaFinalProject",
 			"path": "."
 		},
 		{
+			"name": "assets2",
 			"path": "../../assets2"
 		}
 	],
