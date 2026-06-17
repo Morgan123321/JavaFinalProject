@@ -51,11 +51,23 @@ li {
 
 .logo {
     font-size: 48px;
-    color: purple;
+    color: #c61aff;
     
 }
 .nav__container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.nav__link {
+    margin: 20px;
+}
+
+.contact__btn {
+    background-color: #c61aff;
+    color: white;
+    padding: 10px 30px 10px 30px;
+    border-radius: 20px;
+    margin-top: 32px;
 }
