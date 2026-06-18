@@ -73,6 +73,7 @@ li {
     border-radius: 20px;
     margin-top: 32px;
     border: none;
+    cursor: pointer;
 }
 
 .nav__logo {
@@ -80,4 +81,18 @@ li {
     max-width: 200px;
     height: 100%;
     max-height: 200px;
+}
+
+#landing {
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    align-items: center;
+    justify-content: center;
+}
+
+.red {
+    color: red;
 }
