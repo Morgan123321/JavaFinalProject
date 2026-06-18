@@ -71,3 +71,10 @@ li {
     border-radius: 20px;
     margin-top: 32px;
 }
+
+.nav__logo {
+    width: 100%;
+    max-width: 200px;
+    height: 100%;
+    max-height: 200px;
+}
