@@ -89,6 +89,7 @@ li {
 }
 
 .header {
+    margin-top: 200px;
     align-items: center;
     justify-content: center;
 }
