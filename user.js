@@ -1,25 +1,41 @@
+const movieListEl = document.querySelector(".movie-list");
+const movieTitle = localStorage.getItem("movieTitle");
+const API_KEY = "e76cdb42";
 
-const movieListEl = document.querySelector('.movie-list')
-const id = localStorage.getItem("id")
+async function onSearchChange(event) {
+  const movieTitle = event.target.value;
+  renderMovies(movieTitle);
+}
 
-async function onSearchChange (event){
-   const id = event.target.value;
-   renderMovies(id)
+async function renderMovies(movieTitle) {
+  const response = await fetch(
+    `https://www.omdbapi.com/?s=${encodeURIComponent(movieTitle)}&apikey=${API_KEY}`
+  );
 
+  const moviesData = await response.json();
 
-async function renderMovies(id) {
-    const movies = await fetch(`https://www.omdbapi.com/?s=${encodeURIComponent(movieTitle)}&apikey=${API_KEY}`)
-    const moviesData = await movies.json();
-  movieListEl.innerHTML = moviesData.map(movie=>movieHTML(movie)).join('');
+  if (!moviesData.Search) {
+    movieListEl.innerHTML = "<p>No movies found.</p>";
+    return;
+  }
+
+  movieListEl.innerHTML = moviesData.Search
+    .map((movie) => movieHTML(movie))
+    .join("");
 }
 
 function movieHTML(movie) {
-    return
-     `<div class="movie-card">
+  return `
+    <div class="movie-card">
       <img src="${movie.Poster}" alt="${movie.Title}">
       <h2>${movie.Title}</h2>
       <p>Year: ${movie.Year}</p>
       <p>Type: ${movie.Type}</p>
-    </div>`
+    </div>
+  `;
 }
-renderMovies(id);
+
+// Initial render
+if (movieTitle) {
+  renderMovies(movieTitle);
+}
