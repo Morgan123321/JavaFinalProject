@@ -29,10 +29,19 @@
   
  <section id="landing">
     <div class = "landing__container">
-        <div class="landing__row">
-    <h1 class= "header">America's Most Comprehensive <span class=red>Movie Guide!</span></h1>
-<input type="text" id="searchbar" placeholder="Search movies...">
+        <div class="landing__row">                
+        <h1 class="header">America's Most Comprehensive <span class=red>Movie Guide!</span></h1>
+         <figure>
+            <img class="landing__img" src="./assets/movie.jpg">
+         </figure>
+        <input type="text" id="searchbar" placeholder="Search movies..." onchange="onSearchChange">
  <button class="search__button">Search</button>
+   <div class="movie-card">
+      <img src="${movie.Poster}" alt="${movie.Title}">
+      <h2>${movie.Title}</h2>
+      <p>Year: ${movie.Year}</p>
+      <p>Type: ${movie.Type}</p>
+    </div>
 </div> 
 </div>
 </section>

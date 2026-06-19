@@ -168,3 +168,27 @@ footer {
         flex-direction: column;
         align-items: center;
     }
+
+    .landing__img {
+        width: 100%;
+        max-width: 1200px;
+        height: 70vh;
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+
+.movie-card {
+  width: 200px;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.movie-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+}
