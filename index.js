@@ -2,14 +2,16 @@ const API_KEY = "e76cdb42";
 
 function searchMovie(movieTitle) {
   fetch(
-    `https://www.omdbapi.com/?s=${encodeURIComponent(movieTitle)}&apikey=${API_KEY}`
-  )
+    `https://www.omdbapi.com/?s=${encodeURIComponent(movieTitle)}&apikey=${API_KEY}`)
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
 
       const movieListEl = document.querySelector(".movie-list");
-      if(!dataSearch) {movieListEl.innerHTML="<p>No moviesfound.<p>";return; }
+      if(!data.Search) {
+        movieListEl.innerHTML="<p>No moviesfound.<p>";
+        return;
+     }
 
       movieListEl.innerHTML = data.Search
         .map((movie) => userHTML(movie))

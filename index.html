@@ -14,6 +14,8 @@
  <div class = "nav__container">
     <div class="row">
  <img class="nav__logo" src= "./assets/moviepic.avif" alt="moviepic">
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger"><i class="fa-solid fa-bars"></i></label>
     <ul class="nav__links">
     <li><a href ="#" class ="nav__link">Home</a></li>
     <li><a href= "#landing" class = "nav__link">Search Movies</a></li>
@@ -38,7 +40,7 @@
         <input type="text" id="searchbar" placeholder="Search movies...">
  <button class="search__button" onclick="searchMovie(document.getElementById('searchbar').value)">Search</button>
    <div class="movie-list">
-    
+
    </div>
 </div> 
 </div>
