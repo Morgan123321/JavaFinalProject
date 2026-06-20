@@ -35,7 +35,7 @@ function movieHTML(movie) {
   `;
 }
 
-// Initial render
+
 if (movieTitle) {
   renderMovies(movieTitle);
 }
