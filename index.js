@@ -9,6 +9,7 @@ function searchMovie(movieTitle) {
       console.log(data);
 
       const movieListEl = document.querySelector(".movie-list");
+      if(!dataSearch) {movieListEl.innerHTML="<p>No moviesfound.<p>";return; }
 
       movieListEl.innerHTML = data.Search
         .map((movie) => userHTML(movie))

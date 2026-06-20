@@ -192,3 +192,14 @@ footer {
   object-fit: cover;
   border-radius: 4px;
 }
+
+@media (max-width: 480px) {
+.header{
+font-size:16px;  
+}
+
+#searchbar {
+    width:auto;
+}
+}
+

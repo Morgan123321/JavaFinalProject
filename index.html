@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://kit.fontawesome.com/37c57aafc9.js" crossorigin="anonymous"></script>
     <link rel ="stylesheet" href ="style.css">
     <script defer src ="index.js"></script> 
 </head>
@@ -34,14 +35,11 @@
          <figure>
             <img class="landing__img" src="./assets/movie.jpg">
          </figure>
-        <input type="text" id="searchbar" placeholder="Search movies..." onchange="onSearchChange">
- <button class="search__button">Search</button>
-   <div class="movie-card">
-      <img src="${movie.Poster}" alt="${movie.Title}">
-      <h2>${movie.Title}</h2>
-      <p>Year: ${movie.Year}</p>
-      <p>Type: ${movie.Type}</p>
-    </div>
+        <input type="text" id="searchbar" placeholder="Search movies...">
+ <button class="search__button" onclick="searchMovie(document.getElementById('searchbar').value)">Search</button>
+   <div class="movie-list">
+    
+   </div>
 </div> 
 </div>
 </section>
