@@ -1,14 +1,28 @@
 const API_KEY = "e76cdb42";
 let movies = [];
 
-
 function searchMovie(movieTitle) {
-  fetch(
-    `https://www.omdbapi.com/?s=${encodeURIComponent(movieTitle)}&apikey=${API_KEY}`)
+  const movieListEl = document.querySelector(".movie-list");
+
+  fetch(`https://www.omdbapi.com/?s=${encodeURIComponent(movieTitle)}&apikey=${API_KEY}`)
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-      
+
+      if (!data.Search) {
+        movieListEl.innerHTML = "<p>No movies found.</p>";
+        return;
+      }
+
+      movies = data.Search;
+      displayMovies(movies);
+    })
+    .catch((error) => {
+      console.error("Something went wrong:", error);
+      movieListEl.innerHTML = "<p>Something went wrong. Please try again.</p>";
+    });
+}
+
 function displayMovies(movieList) {
   const movieListEl = document.querySelector(".movie-list");
 
@@ -31,20 +45,6 @@ function filterMovies() {
   }
 
   displayMovies(movies);
-}
-      const movieListEl = document.querySelector(".movie-list");
-      if(!data.Search) {
-        movieListEl.innerHTML="<p>No moviesfound.<p>";
-        return;
-     }
-
-     movies = data.Search;
-     displayMovies(movies);
-    })
-    .catch((error) => {
-   console.error("Something went wrong:", error);
-  movieListEl.innerHTML = "<p>Something went wrong. Please try again.</p>";
-});
 }
 
 function showMovieCards(imdbID) {
