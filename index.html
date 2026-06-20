@@ -39,7 +39,14 @@
          </figure>
         <input type="text" id="searchbar" placeholder="Search movies...">
  <button class="search__button" onclick="searchMovie(document.getElementById('searchbar').value)">Search</button>
-   <div class="movie-list">
+ <select id="filter" onchange="filterMovies()">
+  <option value="">Filter</option>
+  <option value="az">A-Z</option>
+  <option value="za">Z-A</option>
+  <option value="newest">Newest</option>
+  <option value="oldest">Oldest</option>
+</select>  
+ <div class="movie-list">
 
    </div>
 </div> 
