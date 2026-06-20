@@ -133,6 +133,7 @@ li {
 
 .landing__container {
 display:flex;
+flex-wrap:wrap;
 justify-content: center;
 align-items: center;
 }
@@ -185,6 +186,11 @@ footer {
         margin-bottom: 80px;
     }
 
+    .movie-list{
+        display:flex;
+        flex-direction:row;
+        flex-wrap:wrap;
+    }
 .movie-card {
   width: 200px;
   padding: 10px;
@@ -214,6 +220,10 @@ font-size:24px;
 .hamburger{
     display:block;
 }
+ 
+#menu-toggle:checked ~ .nav__links {
+  display: flex;
+}
 .nav__links {
     display:none;
     flex-direction: column;
@@ -242,13 +252,5 @@ font-size:16px;
     display: flex;
 }
 }
-.nav__links {
-    display:none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left:0;
-    width:100%;
-    padding: 10px 0;
-}
-}
+
+
